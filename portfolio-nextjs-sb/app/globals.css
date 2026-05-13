@@ -1,0 +1,9 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+}
