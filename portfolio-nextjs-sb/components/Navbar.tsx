@@ -6,17 +6,17 @@ const Navbar = () => {
     const pathname = usePathname();
     const navItems = [
         { name: 'Home', path: '/' },
-        { name: 'About', path: '/about' },
-        { name: 'Projects', path: '/projects' },
-        { name: 'Articles', path: '/articles' },
-        { name: 'Contact', path: '/contact' },
+        { name: 'About', path: '/portfolio/about' },
+        { name: 'Projects', path: '/portfolio/projects' },
+        { name: 'Articles', path: '/portfolio/articles' },
+        { name: 'Contact', path: '/portfolio/contact' },
     ];
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
                 <Link className="navbar-brand" href="/">
-                    Bipin Paudel
+                    Bipin Poudel
                 </Link>
                 <button
                     className="navbar-toggler"

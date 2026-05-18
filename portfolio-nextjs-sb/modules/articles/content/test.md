@@ -2,7 +2,7 @@
 title: 'Why I Switched to Next.js'
 date: '2025-01-15'
 excerpt: 'A personal journey from static HTML to a modern React framework.'
-coverImage: '/images/nextjs.jpg'
+coverImage: '/next.svg'
 ---
 
 # Why I Switched to Next.js

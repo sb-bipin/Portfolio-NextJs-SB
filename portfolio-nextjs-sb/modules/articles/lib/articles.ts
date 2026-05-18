@@ -5,7 +5,7 @@ import { remark } from 'remark';
 import html from 'remark-html';
 import { Article } from '../types';
 
-const articlesDirectory = path.join(process.cwd(), 'src/modules/articles/content');
+const articlesDirectory = path.join(process.cwd(), 'modules/articles/content');
 
 export async function getAllArticles(): Promise<Article[]> {
     const fileNames = fs.readdirSync(articlesDirectory);
