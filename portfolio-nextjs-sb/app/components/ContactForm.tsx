@@ -1,8 +1,6 @@
-// src/components/ContactForm.tsx
 'use client';
 
 import { useState, FormEvent } from 'react';
-import { Form, Button, Alert, Card, Row, Col } from 'react-bootstrap';
 
 export default function ContactForm() {
     const [formData, setFormData] = useState({
@@ -34,7 +32,6 @@ export default function ContactForm() {
             return;
         }
 
-        // Mock submission (replace with real endpoint later)
         try {
             await new Promise(resolve => setTimeout(resolve, 1000));
             console.log('Form submitted:', formData);
@@ -47,72 +44,80 @@ export default function ContactForm() {
     };
 
     return (
-        <Card className="shadow-sm border-0 rounded-4 p-4">
-            <Card.Body>
-                {status === 'success' && (
-                    <Alert variant="success" onClose={() => setStatus('idle')} dismissible>
-                        Thank you! Your message has been sent. I’ll get back to you soon.
-                    </Alert>
-                )}
-                {status === 'error' && (
-                    <Alert variant="danger" onClose={() => setStatus('idle')} dismissible>
-                        {errorMsg}
-                    </Alert>
-                )}
+        <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 md:p-8 border border-gray-100 dark:border-gray-700">
+            {status === 'success' && (
+                <div className="mb-6 bg-green-50 dark:bg-green-900/30 border border-green-200 dark:border-green-800 text-green-800 dark:text-green-200 px-4 py-3 rounded-xl flex justify-between items-start">
+                    <span>Thank you! Your message has been sent. I’ll get back to you soon.</span>
+                    <button onClick={() => setStatus('idle')} className="text-green-800 dark:text-green-200 hover:text-green-900">×</button>
+                </div>
+            )}
+            {status === 'error' && (
+                <div className="mb-6 bg-red-50 dark:bg-red-900/30 border border-red-200 dark:border-red-800 text-red-800 dark:text-red-200 px-4 py-3 rounded-xl flex justify-between items-start">
+                    <span>{errorMsg}</span>
+                    <button onClick={() => setStatus('idle')} className="text-red-800 dark:text-red-200 hover:text-red-900">×</button>
+                </div>
+            )}
 
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group className="mb-4" controlId="name">
-                        <Form.Label>Your Name *</Form.Label>
-                        <Form.Control
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            onChange={handleChange}
-                            placeholder="John Doe"
-                            required
-                            disabled={status === 'loading'}
-                        />
-                    </Form.Group>
+            <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                        Your Name *
+                    </label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        placeholder="John Doe"
+                        required
+                        disabled={status === 'loading'}
+                        className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition disabled:opacity-50"
+                    />
+                </div>
 
-                    <Form.Group className="mb-4" controlId="email">
-                        <Form.Label>Email Address *</Form.Label>
-                        <Form.Control
-                            type="email"
-                            name="email"
-                            value={formData.email}
-                            onChange={handleChange}
-                            placeholder="hello@example.com"
-                            required
-                            disabled={status === 'loading'}
-                        />
-                    </Form.Group>
+                <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                        Email Address *
+                    </label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        placeholder="hello@example.com"
+                        required
+                        disabled={status === 'loading'}
+                        className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition disabled:opacity-50"
+                    />
+                </div>
 
-                    <Form.Group className="mb-4" controlId="message">
-                        <Form.Label>Message *</Form.Label>
-                        <Form.Control
-                            as="textarea"
-                            name="message"
-                            value={formData.message}
-                            onChange={handleChange}
-                            rows={5}
-                            placeholder="Tell me about your project or idea..."
-                            required
-                            disabled={status === 'loading'}
-                        />
-                    </Form.Group>
+                <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+                        Message *
+                    </label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        rows={5}
+                        placeholder="Tell me about your project or idea..."
+                        required
+                        disabled={status === 'loading'}
+                        className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition disabled:opacity-50"
+                    />
+                </div>
 
-                    <div className="d-grid gap-2">
-                        <Button
-                            variant="primary"
-                            type="submit"
-                            size="lg"
-                            disabled={status === 'loading'}
-                        >
-                            {status === 'loading' ? 'Sending...' : 'Send Message'}
-                        </Button>
-                    </div>
-                </Form>
-            </Card.Body>
-        </Card>
+                <button
+                    type="submit"
+                    disabled={status === 'loading'}
+                    className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-6 rounded-full transition shadow-md disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                    {status === 'loading' ? 'Sending...' : 'Send Message'}
+                </button>
+            </form>
+        </div>
     );
 }
