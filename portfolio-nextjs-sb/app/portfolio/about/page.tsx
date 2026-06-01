@@ -1,164 +1,165 @@
-// src/app/about/page.tsx
+'use client';
+
 import Image from 'next/image';
+import { FaGraduationCap, FaHotel, FaUsers, FaChartLine, FaLeaf, FaHeart } from 'react-icons/fa';
+import { MdRoomService, MdEventAvailable } from 'react-icons/md';
 
-export const metadata = {
-    title: 'About Me | Bipin Paudel',
-    description: 'Learn more about Bipin Paudel – web developer, tech writer, and problem solver from Nepal.',
-};
-
-export default function AboutPage() {
-    const skills = [
-        { name: 'JavaScript / TypeScript', level: 90 },
-        { name: 'React / Next.js', level: 88 },
-        { name: 'Node.js / Express', level: 75 },
-        { name: 'Python / Django', level: 70 },
-        { name: 'Bootstrap / Tailwind', level: 85 },
-        { name: 'MongoDB / PostgreSQL', level: 80 },
-    ];
-
-    const interests = [
-        '📖 Reading tech blogs',
-        '✍️ Writing articles',
-        '🏔️ Trekking in Nepal',
-        '☕ Open source contributor',
-    ];
-
+export default function About() {
     return (
-        <div className="container py-5">
-            {/* Hero section */}
-            <div className="row align-items-center mb-5">
-                <div className="col-md-4 text-center mb-4 mb-md-0">
-                    <div className="position-relative mx-auto" style={{ width: '250px', height: '250px' }}>
-                        <Image src="/images/profile.jpg" alt="..." fill className="rounded-circle object-fit-cover border border-3 border-primary shadow" />
+        <div className="min-h-screen py-8 md:py-8">
+            <div className="container mx-auto px-2 max-w-2xl">
+
+                {/* Hero Section */}
+                <div className="text-center mb-16">
+                    <div className="inline-block bg-blue-100 dark:bg-stone-700 text-blue-700 dark:text-amber-300 px-4 py-1 rounded-full text-sm font-semibold mb-4">
+                        Get to know me
+                    </div>
+
+                    <p className="text-xl text-gray-600 dark:text-stone-300 max-w-3xl mx-auto leading-relaxed">
+                        Hotel Management student with a passion for creating memorable guest experiences
+                        and optimising hospitality operations through technology and empathy.
+                    </p>
+                </div>
+
+                {/* Profile & Story Section */}
+                <div className="grid md:grid-cols-2 gap-12 mb-20 items-center">
+                    <div className="relative">
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-200 to-purple-200 dark:from-stone-600 dark:to-amber-700 rounded-3xl blur-2xl opacity-30 -z-10"></div>
+                        <div className="bg-white dark:bg-stone-800 rounded-3xl overflow-hidden shadow-xl">
+                            <img
+                                src="/images/profile.jpg"
+                                alt="Bipana Poudel"
+                                className="w-full h-auto object-cover"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800 dark:text-stone-100">
+                            My Journey in Hospitality
+                        </h2>
+                        <p className="text-gray-600 dark:text-stone-300 mb-4 leading-relaxed">
+                            Ever since I was young, I've been fascinated by the art of hospitality – how a warm smile,
+                            a thoughtful gesture, or an efficient check‑in can turn a stay into a lifelong memory.
+                            This passion led me to pursue a Bachelor's in Hotel Management, where I blend operational
+                            excellence with a data‑driven mindset.
+                        </p>
+                        <p className="text-gray-600 dark:text-stone-300 mb-4 leading-relaxed">
+                            Through internships and academic projects, I've worked in front office, event coordination,
+                            and revenue analysis. I believe the future of hospitality lies in personalisation, sustainability,
+                            and smart technology – and I'm excited to be part of that transformation.
+                        </p>
+                        <div className="flex flex-wrap gap-4 mt-6">
+                            <div className="flex items-center gap-2 text-gray-700 dark:text-stone-200">
+                                <FaHeart className="text-red-500" />
+                                <span>Guest‑centric</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-gray-700 dark:text-stone-200">
+                                <FaLeaf className="text-green-600 dark:text-green-400" />
+                                <span>Sustainability advocate</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-gray-700 dark:text-stone-200">
+                                <FaChartLine className="text-blue-600 dark:text-amber-400" />
+                                <span>Data‑informed</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="col-md-8">
-                    <h1 className="display-4 fw-bold">Bipin Paudel</h1>
-                    <p className="lead text-primary">Full‑Stack Developer & Technical Writer</p>
-                    <p className="text-muted">
-                        Building fast, scalable web applications with modern JavaScript. Sharing knowledge through articles
-                        and open source.
-                    </p>
-                    <div className="mt-3">
-                        <a href="/contact" className="btn btn-primary me-2">Hire Me</a>
-                        <a href="/projects" className="btn btn-outline-secondary">View Projects</a>
+
+                {/* Education & Experience */}
+                <div className="mb-20">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-gray-800 dark:text-stone-100">
+                        Education & Experience
+                    </h2>
+                    <div className="grid md:grid-cols-2 gap-8">
+                        {/* Education Card */}
+                        <div className="bg-gray-50 dark:bg-stone-700/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                            <div className="flex items-center gap-3 mb-4">
+                                <FaGraduationCap className="text-blue-600 dark:text-amber-400 text-3xl" />
+                                <h3 className="text-xl font-semibold text-gray-800 dark:text-stone-200">Education</h3>
+                            </div>
+                            <div className="space-y-4">
+                                <div>
+                                    <p className="font-medium text-gray-900 dark:text-stone-100">Bachelor in Hotel Management</p>
+                                    <p className="text-sm text-gray-500 dark:text-stone-400">2022 – 2026 (Expected)</p>
+                                    <p className="text-gray-600 dark:text-stone-300 mt-1">Pokhara University, Nepal</p>
+                                </div>
+                                <div>
+                                    <p className="font-medium text-gray-900 dark:text-stone-100">Certification in Revenue Management</p>
+                                    <p className="text-sm text-gray-500 dark:text-stone-400">2024</p>
+                                    <p className="text-gray-600 dark:text-stone-300 mt-1">eCornell / STR Global</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Experience Card */}
+                        <div className="bg-gray-50 dark:bg-stone-700/50 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                            <div className="flex items-center gap-3 mb-4">
+                                <FaHotel className="text-blue-600 dark:text-amber-400 text-3xl" />
+                                <h3 className="text-xl font-semibold text-gray-800 dark:text-stone-200">Experience</h3>
+                            </div>
+                            <div className="space-y-4">
+                                <div>
+                                    <p className="font-medium text-gray-900 dark:text-stone-100">Front Office Intern</p>
+                                    <p className="text-sm text-gray-500 dark:text-stone-400">Summer 2024</p>
+                                    <p className="text-gray-600 dark:text-stone-300 mt-1">Hotel Annapurna, Kathmandu</p>
+                                </div>
+                                <div>
+                                    <p className="font-medium text-gray-900 dark:text-stone-100">Event Planning Assistant</p>
+                                    <p className="text-sm text-gray-500 dark:text-stone-400">2023 – Present</p>
+                                    <p className="text-gray-600 dark:text-stone-300 mt-1">Freelance for weddings & corporate events</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Bio Section */}
-            <div className="row mb-5">
-                <div className="col">
-                    <h2 className="border-bottom pb-2 mb-4">Who Am I?</h2>
-                    <p style={{ fontSize: '1.1rem', lineHeight: '1.7' }}>
-                        I&apos;m a passionate developer from <strong>Pokhara, Nepal</strong> with over 4 years of experience
-                        in building responsive, user‑centric web applications. I love turning complex problems into simple,
-                        elegant solutions. Currently, I focus on <strong>Next.js</strong> and the modern React ecosystem,
-                        while also exploring backend technologies like Node.js and Python.
-                    </p>
-                    <p>
-                        When I&apos;m not coding, you&apos;ll find me writing technical articles (right here on this site),
-                        contributing to open source, or planning my next Himalayan trek. I believe in continuous learning
-                        and sharing knowledge with the community.
-                    </p>
-                </div>
-            </div>
-
-            {/* Skills Section */}
-            <div className="row mb-5">
-                <div className="col">
-                    <h2 className="border-bottom pb-2 mb-4">Technical Skills</h2>
-                    <div className="row">
-                        {skills.map((skill, idx) => (
-                            <div key={idx} className="col-md-6 mb-3">
-                                <div className="d-flex justify-content-between mb-1">
-                                    <span>{skill.name}</span>
-                                    <span>{skill.level}%</span>
+                {/* Core Skills – Hospitality Focused */}
+                <div className="mb-20">
+                    <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center text-gray-800 dark:text-stone-100">
+                        Core Competencies
+                    </h2>
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        {[
+                            { name: 'Front Office Operations', icon: <MdRoomService /> },
+                            { name: 'Guest Relations', icon: <FaUsers /> },
+                            { name: 'Revenue Management', icon: <FaChartLine /> },
+                            { name: 'Event Coordination', icon: <MdEventAvailable /> },
+                            { name: 'PMS Software (Opera, Cloudbeds)', icon: <FaHotel /> },
+                            { name: 'Sustainability Practices', icon: <FaLeaf /> },
+                        ].map((skill) => (
+                            <div
+                                key={skill.name}
+                                className="bg-blue-50 dark:bg-stone-700/70 rounded-xl p-4 text-center hover:scale-105 transition-transform duration-200"
+                            >
+                                <div className="text-blue-600 dark:text-amber-400 text-2xl mb-2 flex justify-center">
+                                    {skill.icon}
                                 </div>
-                                <div className="progress">
-                                    <div
-                                        className="progress-bar bg-primary"
-                                        role="progressbar"
-                                        style={{ width: `${skill.level}%` }}
-                                        aria-valuenow={skill.level}
-                                        aria-valuemin={0}
-                                        aria-valuemax={100}
-                                    >
-                                        {skill.level}%
-                                    </div>
-                                </div>
+                                <p className="text-sm font-medium text-gray-700 dark:text-stone-200">{skill.name}</p>
                             </div>
                         ))}
                     </div>
                 </div>
-            </div>
 
-            {/* Experience & Education */}
-            <div className="row mb-5">
-                <div className="col-md-6 mb-4 mb-md-0">
-                    <h2 className="border-bottom pb-2 mb-4">Experience</h2>
-                    <div className="card shadow-sm mb-3">
-                        <div className="card-body">
-                            <h5>Senior Frontend Developer</h5>
-                            <p className="text-muted">TechStart Pvt. Ltd. | 2023 – Present</p>
-                            <ul>
-                                <li>Lead the rewrite of the company dashboard using Next.js 14 and TypeScript.</li>
-                                <li>Improved performance by 40% through code splitting and image optimisation.</li>
-                                <li>Mentored two junior developers and conducted weekly code reviews.</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="card shadow-sm">
-                        <div className="card-body">
-                            <h5>Junior Web Developer</h5>
-                            <p className="text-muted">WebSolutions Nepal | 2020 – 2023</p>
-                            <ul>
-                                <li>Built and maintained 10+ client websites using React, Bootstrap, and WordPress.</li>
-                                <li>Implemented responsive designs and cross‑browser compatibility.</li>
-                                <li>Collaborated with design team to deliver pixel‑perfect interfaces.</li>
-                            </ul>
-                        </div>
-                    </div>
+                {/* Quote / Philosophy */}
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-stone-800 dark:to-stone-700 rounded-2xl p-8 text-center">
+                    <p className="text-lg md:text-xl italic text-gray-700 dark:text-stone-200 leading-relaxed">
+                        "Hospitality is not just about service – it's about making people feel seen, valued, and cared for.
+                        I strive to bring that philosophy into every project I undertake."
+                    </p>
+                    <p className="mt-4 font-semibold text-blue-600 dark:text-amber-400">— Bipana Poudel</p>
                 </div>
-                <div className="col-md-6">
-                    <h2 className="border-bottom pb-2 mb-4">Education</h2>
-                    <div className="card shadow-sm mb-3">
-                        <div className="card-body">
-                            <h5>Bachelor’s in Computer Science</h5>
-                            <p className="text-muted">Pokhara University | 2018 – 2022</p>
-                            <p>Graduated with First Division. Coursework included Data Structures, Web Technologies, and Database Design.</p>
-                        </div>
-                    </div>
-                    <div className="card shadow-sm">
-                        <div className="card-body">
-                            <h5>Full‑Stack Web Development Bootcamp</h5>
-                            <p className="text-muted">Le Wagon (Remote) | 2021</p>
-                            <p>Intensive 9‑week program covering Ruby on Rails, JavaScript, HTML/CSS, and agile methodologies.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            {/* Fun Facts / Interests */}
-            <div className="row mb-5">
-                <div className="col">
-                    <h2 className="border-bottom pb-2 mb-4">Beyond the Code</h2>
-                    <div className="d-flex flex-wrap gap-3">
-                        {interests.map((interest, idx) => (
-                            <span key={idx} className="badge bg-secondary p-3 fs-6 rounded-pill">
-                                {interest}
-                            </span>
-                        ))}
-                    </div>
-                </div>
-            </div>
-
-            {/* Call to Action */}
-            <div className="row text-center bg-light p-5 rounded-4">
-                <div className="col">
-                    <h3>Want to work together?</h3>
-                    <p className="mb-4">I&apos;m always open to discussing new projects or freelance opportunities.</p>
-                    <a href="/contact" className="btn btn-primary btn-lg">Get In Touch →</a>
+                {/* Call to action (optional) */}
+                <div className="text-center mt-16">
+                    <p className="text-gray-600 dark:text-stone-300 mb-4">
+                        Want to collaborate or just chat about hospitality?
+                    </p>
+                    <a
+                        href="/portfolio/contact"
+                        className="inline-block bg-blue-600 dark:bg-amber-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 dark:hover:bg-amber-700 transition shadow-md"
+                    >
+                        Get in Touch
+                    </a>
                 </div>
             </div>
         </div>

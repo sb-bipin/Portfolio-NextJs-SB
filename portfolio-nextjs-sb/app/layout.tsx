@@ -1,25 +1,27 @@
 import type { Metadata } from 'next';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
-import BootstrapClient from '@/components/BootstrapClient'; // we'll create this
-import Navbar from '@/components/Navbar';
+import Navbar from '@/app/components/Navbar';
+import Footer from '@/app/components/Footer';
+import { ThemeProvider } from '@/app/context/ThemeContext';
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
+const poppins = Poppins({ weight: ['400', '500', '600', '700'], subsets: ['latin'], variable: '--font-poppins' });
 
 export const metadata: Metadata = {
-  title: 'Bipin Poudel | Personal Website',
-  description: 'Personal website and articles by Bipin Poudel',
+  title: 'Bipana Poudel | Portfolio',
+  description: 'Portfolio built with Next.js & Tailwind CSS',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
-        <Navbar />
-        <main className="container my-4">{children}</main>
-        <BootstrapClient />
+    <html lang="en" className={`${inter.variable} ${poppins.variable}`} suppressHydrationWarning>
+      <body className="bg-blue-50/30 dark:bg-stone-800 text-gray-900 dark:text-stone-100 transition-colors duration-300">
+        <ThemeProvider>
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
