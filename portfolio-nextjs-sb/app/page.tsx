@@ -17,7 +17,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
             <div className="flex-1 text-center lg:text-left">
               <div className="inline-block bg-blue-100 dark:bg-stone-700 text-blue-700 dark:text-amber-300 px-4 py-1 rounded-full text-sm font-semibold mb-4">
-                ✨ Future Hotelier
+                ✨ Future Chef
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
                 Hi, I'm <br /> <span className="text-blue-600 dark:text-amber-400">Bipana Poudel</span>
@@ -33,7 +33,7 @@ export default function Home() {
               </div>
               <div className="flex gap-5 justify-center lg:justify-start mt-8">
                 <a href="https://linkedin.com/bipana-poudel" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-stone-400 hover:text-blue-600 dark:hover:text-amber-400 transition"><FaLinkedin size={28} /></a>
-                <a href="mailto:bipanapoudel404@example.com" className="text-gray-600 dark:text-stone-400 hover:text-blue-600 dark:hover:text-amber-400 transition"><FaEnvelope size={28} /></a>
+                <a href="mailto:bipanapoudel404@gmail.com" className="text-gray-600 dark:text-stone-400 hover:text-blue-600 dark:hover:text-amber-400 transition"><FaEnvelope size={28} /></a>
               </div>
             </div>
             <div className="flex-1 flex justify-center">
@@ -41,7 +41,7 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-200 to-purple-200 dark:from-stone-600 dark:to-amber-700 rounded-full blur-3xl opacity-30 -z-10"></div>
                 <div className="bg-gradient-to-br from-blue-100 to-purple-100 dark:from-stone-700 dark:to-stone-600 rounded-full p-6 shadow-xl">
                   <div className="w-48 h-48 md:w-64 md:h-64 bg-white dark:bg-stone-800 rounded-full overflow-hidden shadow-inner">
-                    <img src="/images/profile1.jpg" alt="Bipana Poudel" className="w-full h-full object-cover" />
+                    <img src="/images/profile-nani.jpg" alt="Bipana Poudel" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>

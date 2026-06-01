@@ -48,12 +48,12 @@ export default function ArticlesPage() {
                                     </p>
 
                                     {/* Read more link */}
-                                    <Link
+                                    {/* <Link
                                         href={`/portfolio/articles/${post.slug}`}
                                         className="inline-flex items-center gap-2 text-blue-600 dark:text-amber-400 font-medium hover:gap-3 transition-all"
                                     >
                                         Read Article →
-                                    </Link>
+                                    </Link> */}
                                 </div>
                             </article>
                         ))}

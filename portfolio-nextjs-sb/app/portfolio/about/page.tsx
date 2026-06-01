@@ -27,7 +27,7 @@ export default function About() {
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-200 to-purple-200 dark:from-stone-600 dark:to-amber-700 rounded-3xl blur-2xl opacity-30 -z-10"></div>
                         <div className="bg-white dark:bg-stone-800 rounded-3xl overflow-hidden shadow-xl">
                             <img
-                                src="/images/profile.jpg"
+                                src="/images/profile-nani.jpg"
                                 alt="Bipana Poudel"
                                 className="w-full h-auto object-cover"
                             />
